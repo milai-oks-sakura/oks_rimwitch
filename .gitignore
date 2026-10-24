@@ -1,0 +1,58 @@
+# ===========================================================
+#  RimWorld Mod .gitignore
+# ===========================================================
+
+# ---------- .NET / Visual Studio 构建产物 ----------
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+*.user
+*.suo
+*.userprefs
+*.csproj.user
+*.sln.DotSettings.user
+*.pidb
+*.mdb
+*.opendb
+*.VC.db
+*.tlog
+
+# ---------- IDE ----------
+.vs/
+.idea/
+.vscode/           # 若希望共享 .vscode 配置，删掉这一行
+*.DotSettings.user
+
+# ---------- 编译输出到 Assemblies/（二选一）----------
+# 方案 A：不提交编译好的 DLL（推荐：用 GitHub Actions 打包）
+# Assemblies/*.dll
+# Assemblies/*.pdb
+# Assemblies/*.xml
+
+# 方案 B：提交 DLL 以便直接克隆即用（默认）
+# 无需额外规则；如需强制保留可加：
+# !Assemblies/*.dll
+
+# ---------- NuGet ----------
+*.nupkg
+packages/
+!packages/repositories.config
+
+# ---------- Harmony / 调试 ----------
+*.log
+*.tmp
+*.orig
+*.rej
+
+# ---------- 操作系统杂项 ----------
+.DS_Store
+._*
+Thumbs.db
+desktop.ini
+
+# ---------- 源文件（可选，视团队约定）----------
+# *.psd
+# *.xcf
+# *.blend
+# *.kra

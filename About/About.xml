@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+    <name>[oks]rimwitch</name>
+    <autho>milai_oks_sakura</autho>
+    <packageId>oks.RimWitch</packageId>
+    <supportedVersions>
+        <li>1.7</li>
+    </supportedVersions>
+    <description>the witch of rimworld</description>
+    <modDependencies>
+        <li>
+            <packageId>brrainz.harmony</packageId>
+			<displayName>Harmony</displayName>
+			<steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+        </li>
+    </modDependencies>
+    <loadAfter>
+        <li>
+            <li>Ludeon.RimWorld</li>
+		    <li>brrainz.harmony</li>
+        </li>
+    </loadAfter>
+</ModMetaData>

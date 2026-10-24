@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="PlantBase">
+    <defName>Oks_RimWitch_Plant_CrowEye</defName>
+    <label>crow eye</label>
+    <description>A hardy shrub with dark, cypress-like foliage and a black-chestnut rootstock buried underground. Unremarkable above ground; valuable below.</description>
+    <statBases>
+      <!--生命值-->
+      <MaxHitPoints>85</MaxHitPoints>
+      <!--营养值-->
+      <Nutrition>0.2</Nutrition>
+    </statBases>
+    <graphicData>
+        <texPath>RimWitch_Plant/Crow_Eye</texPath>
+        <graphicClass>Graphic_Random</graphicClass>
+    </graphicData>
+    <!--是否可以选中(野草不可)-->
+    <selectable>true</selectable>
+    <!--通行成本-->
+    <pathCost>14</pathCost>
+    <ingestible>
+      <foodType>Tree</foodType>
+      <preferability>RawBad</preferability>
+    </ingestible>
+    <plant>
+      <!--肥力敏感度-->
+      <fertilitySensitivity>0.7</fertilitySensitivity>
+      <!--成熟所需的时间-->
+      <growDays>5</growDays>
+      <!--被啃食到无叶时会死亡，而不是恢复-->
+      <dieIfLeafless>true</dieIfLeafless>
+      <!--标准收获标签，用于收获工作/筛选归类。-->
+      <harvestTag>Standard</harvestTag>
+      <!--收获该植物时按“药物”用途处理-->
+      <drugForHarvestPurposes>True</drugForHarvestPurposes>
+      <!--产物-->
+      <harvestedThingDef>Oks_RimWitch_Item_CrowEye</harvestedThingDef>
+      <!--产量-->
+      <harvestYield>8</harvestYield>
+      <!--播种最低种植技能要求 3-->
+      <sowMinSkill>3</sowMinSkill>
+      <sowTags>
+        <!--可种在土地/地面-->
+        <li>Ground</li>
+        <!--可种在水培盆中-->
+        <li>Hydroponic</li>
+      </sowTags>
+      <!--植物顶部受风暴露系数-->
+      <topWindExposure>0.1</topWindExposure>
+      <!--随生长阶段变化的视觉尺寸范围-->
+      <visualSizeRange>0.3~1.05</visualSizeRange>
+      <!--野生生成排序/优先级参数-->
+      <wildOrder>2</wildOrder>
+    </plant>
+  </ThingDef>
+</Defs>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="RoughPlantBase">
+    <defName>Oks_RimWitch_Item_CrowEye</defName>
+    <label>crow eye</label>
+    <description>Dried, crushed rootstock used in combat stimulants and painkillers. Keeps the user lucid through pain and steady under fear, but leaves a lingering paranoia.</description>
+    <possessionCount>10</possessionCount>
+    <graphicData>
+      <texPath>RimWitch_Items/Crow_Eye/Crows_Eye_Fruit</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>0.3</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>30</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <thingCategories>
+      <li>PlantMatter</li>
+    </thingCategories>
+    <ingestible>
+      <preferability>DesperateOnly</preferability>
+      <canAutoSelectAsFoodForCaravan>false</canAutoSelectAsFoodForCaravan>
+    </ingestible>
+  </ThingDef>
+</Defs>
