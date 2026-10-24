@@ -21,13 +21,13 @@
 # ---------- IDE ----------
 .vs/
 .idea/
-.vscode/           # 若希望共享 .vscode 配置，删掉这一行
+.vscode/
 *.DotSettings.user
 
 # ---------- 编译输出到 Assemblies/（二选一）----------
 # 方案 A：不提交编译好的 DLL（推荐：用 GitHub Actions 打包）
 # Assemblies/*.dll
-# Assemblies/*.pdb
+**/Assemblies/*.pdb
 # Assemblies/*.xml
 
 # 方案 B：提交 DLL 以便直接克隆即用（默认）

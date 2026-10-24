@@ -7,6 +7,7 @@
 **为《边缘世界》1.7 带来怪物、银剑与女巫草药的扩展**
 
 [![RimWorld](https://img.shields.io/badge/RimWorld-1.7-2b6cb0?logo=steam&logoColor=white)](https://store.steampowered.com/app/294100/RimWorld/)
+[![Version](https://img.shields.io/badge/version-0.1.0-8a63d2)](About/About.xml)
 [![Harmony](https://img.shields.io/badge/Requires-Harmony-e07b39)](https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077)
 [![License](https://img.shields.io/badge/License-GPL--3.0-3da639)](LICENSE)
 
@@ -17,10 +18,10 @@
 
 > 🌏 English readers: [read the English version](README.md).
 
-RimWitch 是一个轻量的猎魔风味扩展：有些生物无视寻常刀剑，只畏惧银器；而一株不起眼的灌木，在土里藏着有用的东西。
+RimWitch 是一个轻量的猎魔风味扩展：有些生物无视寻常刀剑，只畏惧银器；而三株不起眼的草药，在土里藏着有用的东西。
 
 > [!NOTE]
-> RimWitch 目前是 **0.1** 早期原型，只包含**一种作物**和**银器弱点框架**，尚未加入怪物与炼金系统——这些是下一个里程碑，见[下一步](#下一步)。
+> RimWitch 目前是 **0.1.0** 早期原型，包含**三种药材**（乌鸦眼、金银花、长叶车前）和**银器弱点框架**，尚未加入怪物与炼金系统——这些是下一个里程碑，见[下一步](#下一步)。
 
 ## 怪物只畏惧银器
 
@@ -51,6 +52,8 @@ RimWitch 是一个轻量的猎魔风味扩展：有些生物无视寻常刀剑�
 
 晒干碾碎的根茎能让人在疼痛中保持清醒、在恐惧中保持镇定，代价是久久不散的偏执。它只是开始：更大的炼金线——煎药、药剂与剑油——已经在计划中。
 
+乌鸦眼只是三种药材之一。**金银花**与**长叶车前**同样可以播种、收获，各自的生长、产量与价值仍在调整中。
+
 ## 安装
 
 1. 订阅并启用前置 **[Harmony](https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077)**。
@@ -75,9 +78,9 @@ RimWitch 是一个轻量的猎魔风味扩展：有些生物无视寻常刀剑�
 
 ## 下一步
 
-下一个里程碑是一条完整的小型炼金闭环：
+下一个里程碑是一条建立在现有药材之上的炼金闭环：
 
-- **药材**——乌鸦眼、金银花、长叶车前
+- **炼金台**——把材料做成煎药、药剂与剑油
 - **怪物产物**——巨魔突变诱发物、孽鬼之心、怪物之肝
 - **巨魔煎药**——持续缓慢回血
 - **白色拉法达**——立即回血

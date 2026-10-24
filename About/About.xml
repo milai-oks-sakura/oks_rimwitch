@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
     <name>[oks]rimwitch</name>
-    <autho>milai_oks_sakura</autho>
+    <author>milai_oks_sakura</author>
     <packageId>oks.RimWitch</packageId>
+    <modVersion>0.1.0</modVersion>
     <supportedVersions>
         <li>1.7</li>
     </supportedVersions>
-    <description>the witch of rimworld</description>
+    <description>RimWitch is a witcher-flavoured content mod for RimWorld 1.7.
+
+It adds three alchemical herbs — crow's eye, honeysuckle and ribleaf — and the silver-weakness rule: a creature flagged as a monster takes only a tenth of the damage from anything that is not silver. That rule is data-driven, so other mods can hook their own monsters and silver weapons into the same system.
+
+The alchemy loop is in development: an alchemy bench, monster parts taken from beasts, and recipes that turn them into decoctions that heal over time, potions that restore a colonist on the spot, and blade oils that bite harder against a chosen kind of prey.
+
+Requires Harmony.</description>
     <modDependencies>
         <li>
             <packageId>brrainz.harmony</packageId>
@@ -15,9 +22,7 @@
         </li>
     </modDependencies>
     <loadAfter>
-        <li>
-            <li>Ludeon.RimWorld</li>
-		    <li>brrainz.harmony</li>
-        </li>
+        <li>Ludeon.RimWorld</li>
+        <li>brrainz.harmony</li>
     </loadAfter>
 </ModMetaData>

@@ -1,17 +1,18 @@
-# RimWitch 开发计划 · 炼金系统最小闭环（0.2 Demo）
+# RimWitch 开发计划 · 炼金系统最小闭环（0.1.0）
 
 > - **状态**：设计稿，尚未实现
+> - **版本**：0.1.0（未打 tag 前不变）
 > - **目标**：用一个可玩通的小样，验证「采集/掉落 → 炼金台配方 → 使用效果 → 战斗增益」四条链路
 > - **读者**：开发者（Def 编写、C# 实现、验收）
-> - **相关文档**：[开发文档](develop.md) · [项目主页（英文）](../README.md)
+> - **相关文档**：[开发文档](develop.md) · [任务清单](../TODOLIST.md) · [项目主页（英文）](../README.md)
 
 ---
 
 ## 1. 背景与目标
 
-当前的 0.1 只有两样东西能玩：**银器弱点**（Harmony 补丁）和 **乌鸦眼**（植物 + 根茎）。它们证明了「Def 扩展 + 一个补丁」这条技术路线可行，但还没有验证「材料 → 成品 → 效果」的经济闭环。
+当前的 0.1.0 已实现：**银器弱点**（Harmony 补丁）与 **三种药材**（乌鸦眼、金银花、长叶车前，含植物/产物 Def 与中文文本）。技术路线已经验证，但三种植物目前数值完全相同，且还没有验证「材料 → 成品 → 效果」的经济闭环。
 
-0.2 不追求还原《巫师 3》的整棵炼金树，而是选一组最小内容，把下面四条链路一次跑通：
+0.1.0 不追求还原《巫师 3》的整棵炼金树，而是选一组最小内容，把下面四条链路一次跑通：
 
 1. **采集/掉落**：材料能稳定获得；
 2. **配方**：炼金台读得到配方、正确扣料、正确产出；
@@ -36,7 +37,7 @@
 
 **本期不做**：新种族 / 新派系、突变诱发物分级、任务与事件、自定义 UI、完整配方树、数值精调、成就与兼容层。
 
-> Demo 配方只保证系统闭环，材料数量按《巫师 3》简化，等 0.3 再校准。
+> Demo 配方只保证系统闭环，材料数量按《巫师 3》简化，等后续版本再校准。
 
 ## 3. 数据设计
 
@@ -63,8 +64,8 @@ Oks_RimWitch_ThingCategory_Alchemy        (parent: Root)
 | :--- | :--- | :--- |
 | `Oks_RimWitch_Plant_Honeysuckle` | ThingDef (Plant) | 金银花，成熟收获根茎 |
 | `Oks_RimWitch_Item_Honeysuckle` | ThingDef | 金银花材料 |
-| `Oks_RimWitch_Plant_Plantain` | ThingDef (Plant) | 长叶车前 |
-| `Oks_RimWitch_Item_Plantain` | ThingDef | 长叶车前材料 |
+| `Oks_RimWitch_Plant_Ribleaf` | ThingDef (Plant) | 长叶车前（Ribleaf） |
+| `Oks_RimWitch_Item_Ribleaf` | ThingDef | 长叶车前材料 |
 | `Oks_RimWitch_Plant_CrowEye` | ThingDef (Plant) | 已有 |
 | `Oks_RimWitch_Item_CrowEye` | ThingDef | 已有，改挂新分类 |
 | `Oks_RimWitch_Item_TrollMutagen` | ThingDef | 巨魔突变诱发物 |
@@ -93,7 +94,7 @@ Oks_RimWitch_ThingCategory_Alchemy        (parent: Root)
 | 野兽油 | 怪物之肝 ×1 + 乌鸦眼 ×1 | 600 ticks | 1 |
 
 - 配方只挂在炼金台上（`recipeUsers`），不污染原版工作台。
-- Demo 不设研究前置；是否用「炼金学」研究门禁留到 0.3。
+- Demo 不设研究前置；是否用「炼金学」研究门禁留到后续版本。
 - 白色拉法达的 4 个心偏贵，若测试时节奏过慢，先降到 ×2 再回调。
 
 ### 3.4 效果设计
@@ -114,7 +115,7 @@ Oks_RimWitch_ThingCategory_Alchemy        (parent: Root)
 
 ### 3.5 采集与掉落
 
-**药材（野外生成）**：用 XML Patch 把三种植物加进 `TemperateForest`、`BorealForest`、`TropicalRainforest` 的 `wildPlants`，并调低 `commonality`，避免铺满地图。先只做「野生可采」，不开放种植（种植配方留到 0.3）。
+**药材（野外生成）**：用 XML Patch 把三种植物加进 `TemperateForest`、`BorealForest`、`TropicalRainforest` 的 `wildPlants`，并调低 `commonality`，避免铺满地图。先只做「野生可采」，不开放种植（种植配方留到后续版本）。
 
 **怪物产物（屠宰掉落）**：Demo 阶段不建新种族，用 XML Patch 给现有动物挂 `butcherProducts`：
 
@@ -125,7 +126,7 @@ Oks_RimWitch_ThingCategory_Alchemy        (parent: Root)
 | `WildBoar` | 怪物之肝 ×1 | 通用产物来源 |
 
 - 用 `PatchOperationAdd` 追加到 `butcherProducts`，不覆盖原版产出，零代码。
-- `butcherProducts` 没有概率字段，所以 Demo 是必掉；概率掉落等 0.3 换成自定义 `PawnKindDef`（巨魔/孽鬼）时再处理。
+- `butcherProducts` 没有概率字段，所以 Demo 是必掉；概率掉落等后续版本换成自定义 `PawnKindDef`（巨魔/孽鬼）时再处理。
 - 屠宰需要尸体与屠宰台，比「击杀即掉」多一步，但更符合 RimWorld 的经济习惯，也方便测试。
 
 **炼金台**：继承 `WorkbenchBase`，工作类型 `Crafting`，给一个交互格；`recipeUsers` 指向三条配方；`researchPrerequisites` 留空。
@@ -143,10 +144,10 @@ Oks_RimWitch_ThingCategory_Alchemy        (parent: Root)
 | `1.7/Patches/RimWitch_WildPlants.xml` | 三种植物进生态 |
 | `1.7/Patches/RimWitch_ButcherProducts.xml` | 三种动物加屠宰产物 |
 | `Textures/...` | 占位图 |
-| `1.6/Source/RimWitchCore/HediffComp/HediffComp_HealOverTime.cs` | 持续回血组件（含 Properties） |
-| `1.6/Source/RimWitchCore/Ingestible/IngestibleOutcomeDoer_Heal.cs` | 即时治疗 |
-| `1.6/Source/RimWitchCore/Patch_PreApplyDamage_BeastOil.cs` | 剑油增伤（按目标过滤） |
-| `1.6/Source/RimWitchCore/RimWitchCore.csproj` | 加新文件；建议同期迁移到 `net10.0` |
+| `1.7/Sources/RimWitchCore/HediffComp/HediffComp_HealOverTime.cs` | 持续回血组件（含 Properties） |
+| `1.7/Sources/RimWitchCore/Ingestible/IngestibleOutcomeDoer_Heal.cs` | 即时治疗 |
+| `1.7/Sources/RimWitchCore/Patch_PreApplyDamage_BeastOil.cs` | 剑油增伤（按目标过滤） |
+| `1.7/Sources/RimWitchCore/RimWitchCore.csproj` | 加新文件；建议同期迁移到 `net10.0` |
 
 补丁执行顺序：两个 `PreApplyDamage` Prefix 都用 `[HarmonyPriority]` 显式排序，确保「银器减伤」先算、「剑油增伤」后算；乘法可交换，但排序能让日志和调试结果稳定。
 
@@ -154,8 +155,10 @@ Oks_RimWitch_ThingCategory_Alchemy        (parent: Root)
 
 ### M0 · 分类与材料（S）
 
-- [ ] 分类树、6 种材料、矮人烈酒、贴图占位
-- [ ] 乌鸦眼根迁入新分类，配方仍可引用
+- [x] 三种药材的植物与产物 Def、中文文本（数值待差异化，见 TODOLIST）
+- [ ] 分类树；3 种怪物产物、矮人烈酒、3 种成品
+- [ ] 乌鸦眼等三种药材迁入新分类，配方可引用
+- [ ] 占位贴图（怪物产物、成品、建筑）
 - **验收**：开发者模式下能刷出全部材料，分类在储存区筛选里可见
 
 ### M1 · 采集与掉落（M）
@@ -216,14 +219,14 @@ Oks_RimWitch_ThingCategory_Alchemy        (parent: Root)
 | 问题 | 现状 / 建议 |
 | :--- | :--- |
 | 矮人烈酒用新物品还是原版 `Beer` 占位 | 建议新物品：配方更清晰；若求快可先引用 `Beer`，M5 再替换 |
-| 剑油对昆虫、机械、人形是否生效 | Demo 只认 `race.Animal`；昆虫/机械按「不生效」处理，0.3 再按 `MonsterModExtension.monsterType` 扩展 |
+| 剑油对昆虫、机械、人形是否生效 | Demo 只认 `race.Animal`；昆虫/机械按「不生效」处理，后续版本再按 `MonsterModExtension.monsterType` 扩展 |
 | 毒性是否自然衰减 | 建议 `-10 severity/day`，避免永久惩罚；具体数值 M5 校准 |
-| 炼金台是否需要研究 | Demo 不锁；0.3 挂「炼金学」研究 |
+| 炼金台是否需要研究 | Demo 不锁；后续版本挂「炼金学」研究 |
 | 1.7 运行时为 .NET 10，当前 csproj 仍是 net472 | 见 [开发文档 · 构建](develop.md#5-构建与环境)；不迁移可能加载失败，M0 内先解决 |
 | 与 Combat Extended 等战斗大修冲突 | 未测试；两个补丁都改 `PreApplyDamage`，需实测并在文档标注 |
 | 贴图与本地化缺口 | 占位图 + 英文文案先行，中文语言包在 M5 补齐 |
 
-## 9. 后续（0.3+）
+## 9. 后续版本
 
 - 海克娜煎药（行动消耗体力时回复）、黑血（吸血鬼与食尸生物攻击你时反伤）、食尸生物油等复杂效果。
 - 自定义 `PawnKindDef`：巨魔、孽鬼，替换 Demo 的临时屠宰掉落。

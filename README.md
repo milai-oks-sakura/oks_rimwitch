@@ -7,6 +7,7 @@
 **Monsters, silver swords and witch's herbs for RimWorld 1.7**
 
 [![RimWorld](https://img.shields.io/badge/RimWorld-1.7-2b6cb0?logo=steam&logoColor=white)](https://store.steampowered.com/app/294100/RimWorld/)
+[![Version](https://img.shields.io/badge/version-0.1.0-8a63d2)](About/About.xml)
 [![Harmony](https://img.shields.io/badge/Requires-Harmony-e07b39)](https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077)
 [![License](https://img.shields.io/badge/License-GPL--3.0-3da639)](LICENSE)
 
@@ -16,10 +17,10 @@
 
 > 🇨🇳 中文玩家 / Chinese readers: [点此阅读简体中文版 · Read this in Simplified Chinese](README.zh-CN.md).
 
-RimWitch is a small, early-prototype content mod with a witcher flavour: some creatures shrug off ordinary steel and only fear silver, and a humble shrub hides something useful under the dirt.
+RimWitch is a small, early-prototype content mod with a witcher flavour: some creatures shrug off ordinary steel and only fear silver, and three humble herbs hide something useful under the dirt.
 
 > [!NOTE]
-> RimWitch is at **0.1**. It currently ships **one crop** and the **silver-weakness framework**. It does **not** add monsters or alchemy yet — those are the next milestone, see [What's next](#whats-next).
+> RimWitch is at **0.1.0**. It currently ships **three alchemical herbs** — crow's eye, honeysuckle and ribleaf — plus the **silver-weakness framework**. It does **not** add monsters or alchemy yet — those are the next milestone, see [What's next](#whats-next).
 
 ## Monsters fear only silver
 
@@ -50,6 +51,8 @@ A hardy shrub with dark, cypress-like foliage and a black-chestnut rootstock bur
 
 The root keeps a colonist lucid through pain and steady under fear — at the price of a lingering paranoia. It is the first ingredient of something bigger: a planned alchemy line of decoctions, potions and blade oils.
 
+Crow's eye is one of three herbs in the mod. **Honeysuckle** and **ribleaf** can be sown and harvested too; their growth, yield and value are still being tuned.
+
 ## Installation
 
 1. Subscribe to **[Harmony](https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077)** — required.
@@ -74,9 +77,9 @@ The root keeps a colonist lucid through pain and steady under fear — at the pr
 
 ## What's next
 
-The next milestone is a small, complete alchemy loop:
+The next milestone is a small, complete alchemy loop built on the herbs already in the mod:
 
-- **Herbs** — crow's eye, honeysuckle, plantain
+- **Alchemy bench** — where materials become decoctions, potions and oils
 - **Monster parts** — troll mutagen, nekker heart, monster liver
 - **Troll decoction** — slow, steady healing
 - **White Raffard's decoction** — instant healing
