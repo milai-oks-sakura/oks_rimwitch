@@ -6,7 +6,6 @@ using Verse;
 
 namespace oks
 {
-
     [HarmonyPatch(typeof(Pawn), nameof(Pawn.PreApplyDamage))]
     public class Patch_PreApplyDamage_SilverWeakness
     {
