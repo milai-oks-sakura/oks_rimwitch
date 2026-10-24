@@ -3,7 +3,7 @@
   <ThingDef ParentName="PlantBase">
     <defName>Oks_RimWitch_Plant_CrowEye</defName>
     <label>crow eye</label>
-    <description>A hardy shrub with dark, cypress-like foliage and a black-chestnut rootstock buried underground. Unremarkable above ground; valuable below.</description>
+    <description>Crow's eye is a cypress-like bush, easily recognized by its small, conifer-shaped silhouette.</description>
     <statBases>
       <!--生命值-->
       <MaxHitPoints>85</MaxHitPoints>

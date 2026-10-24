@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="RoughPlantBase">
+    <defName>Oks_RimWitch_Item_Honeysuckle</defName>
+    <label>honeysuckle</label>
+    <description>The leaves of honeysuckle serve as a common alchemy ingredient. They are used in oils, decoctions, and white honey.</description>
+    <possessionCount>10</possessionCount>
+    <graphicData>
+      <texPath>RimWitch_Items/Honeysuckle/Honeysuckle_Fruit</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>0.3</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>30</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <thingCategories>
+      <li>PlantMatter</li>
+    </thingCategories>
+    <ingestible>
+      <preferability>DesperateOnly</preferability>
+      <canAutoSelectAsFoodForCaravan>false</canAutoSelectAsFoodForCaravan>
+    </ingestible>
+  </ThingDef>
+</Defs>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="RoughPlantBase">
+    <defName>Oks_RimWitch_Item_Ribleaf</defName>
+    <label>ribleaf</label>
+    <description>The leaves of ribleaf is a common alchemy ingredient. Needed to craft a wide range of potions, oils, and bombs. Cheap, plentiful, and utterly essential—the quiet backbone of every witcher's kit.</description>
+    <possessionCount>10</possessionCount>
+    <graphicData>
+      <texPath>RimWitch_Items/Ribleaf/Ribleaf_Fruit</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>0.3</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>30</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <thingCategories>
+      <li>PlantMatter</li>
+    </thingCategories>
+    <ingestible>
+      <preferability>DesperateOnly</preferability>
+      <canAutoSelectAsFoodForCaravan>false</canAutoSelectAsFoodForCaravan>
+    </ingestible>
+  </ThingDef>
+</Defs>
