@@ -222,7 +222,7 @@ Oks_RimWitch_ThingCategory_Alchemy        (parent: Root)
 | 剑油对昆虫、机械、人形是否生效 | Demo 只认 `race.Animal`；昆虫/机械按「不生效」处理，后续版本再按 `MonsterModExtension.monsterType` 扩展 |
 | 毒性是否自然衰减 | 建议 `-10 severity/day`，避免永久惩罚；具体数值 M5 校准 |
 | 炼金台是否需要研究 | Demo 不锁；后续版本挂「炼金学」研究 |
-| 1.7 运行时为 .NET 10，当前 csproj 仍是 net472 | 见 [开发文档 · 构建](develop.md#5-构建与环境)；不迁移可能加载失败，M0 内先解决 |
+| 1.7 运行时为 .NET 10，当前 csproj 仍是 net472 | 工程已改为 SDK 风格；目标框架迁移见 [TODOLIST](../TODOLIST.md) §1，不迁移可能加载失败 |
 | 与 Combat Extended 等战斗大修冲突 | 未测试；两个补丁都改 `PreApplyDamage`，需实测并在文档标注 |
 | 贴图与本地化缺口 | 占位图 + 英文文案先行，中文语言包在 M5 补齐 |
 

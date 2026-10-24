@@ -18,7 +18,7 @@
 
 | 项 | 现状 |
 | :--- | :--- |
-| 语言 / 运行时 | C#；当前 `net472`，1.7 运行时为 .NET 10，迁移计划见 [TODOLIST](../TODOLIST.md) §1 |
+| 语言 / 运行时 | C#；**SDK 风格工程**，当前 `net472`（1.7 运行时为 .NET 10，迁移见 [TODOLIST](../TODOLIST.md) §1） |
 | 补丁库 | Harmony 2.x |
 | 内容 | XML Defs + `Languages/**/DefInjected` 本地化 |
 | 文档 | 代码 XML 注释；Doxygen 生成（待引入） |
@@ -101,7 +101,7 @@ RimWorld
 - 文件名与类名一致，一个文件一个职责。
 - 公共类型与成员写 `/// <summary>`；复杂分支写「为什么这样做」，不写逐行翻译。
 - 调试日志用完即删，不留在发布构建里。
-- 新增 `.cs` 需同步 csproj（迁移到 SDK 风格后自动包含）。
+- 新增 `.cs` 由 SDK 工程自动包含，无需改 csproj。
 
 ## 8. 文档与注释策略
 
@@ -112,7 +112,7 @@ RimWorld
 
 ## 9. 构建与冒烟
 
-- 构建：引用游戏 `Assembly-CSharp.dll` 与 Harmony `0Harmony.dll`，产物放入 `1.7/Assemblies/`，重启游戏生效。
+- 构建：`dotnet build 1.7\Sources\RimWitchCore\RimWitchCore.csproj -c Release`，产物写入 `1.7/Assemblies/`（Debug/Release 同路径），重启游戏生效。
 - 迁移与构建细节见 [TODOLIST](../TODOLIST.md) §1。
 - 冒烟测试对照 [TODOLIST](../TODOLIST.md) §10 的验收项。
 

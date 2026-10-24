@@ -11,7 +11,7 @@
 | 银器弱点补丁               | ✅                 | `Pawn.PreApplyDamage`，非银伤害 ×0.1                       |
 | 三种药材（植物 + 产物）    | ✅ 内容 / ⚠️ 数值   | 乌鸦眼、金银花、长叶车前；数值完全相同，见 §8              |
 | 中文 DefInjected           | ✅ 部分            | 6 个 Def 有译文；新内容待补                                |
-| 编译产物                   | ✅（net472 Debug） | `1.7/Assemblies/RimWtichCore.dll` 已提交，建议迁移 net10.0 |
+| 编译产物                   | ✅（net472 Release） | SDK 风格构建，Release 输出已统一到 `1.7/Assemblies/`       |
 | 分类树                     | ❌                 | 尚无 `ThingCategoryDef`                                    |
 | 怪物产物 / 矮人烈酒 / 成品 | ❌                 | 3 + 1 + 3 个 Def 待建                                      |
 | 炼金台 / 配方              | ❌                 | 目录已建，XML 未写                                         |
@@ -23,8 +23,8 @@
 - [ ] 将 `RimWitchCore.csproj` 从 `net472` 迁移到 `net10.0`
   - [x] 移除旧式 `System.*` 引用，`0Harmony` 改指 1.7
   - [x] 保留 `Assembly-CSharp` 引用（游戏根目录）
-  - [ ] 改为 SDK 风格工程（当前仍是旧式 csproj）
-  - [ ] Release 输出也指向 `1.7/Assemblies/`（当前仅 Debug 配置）
+  - [x] 改为 SDK 风格工程（SDK 风格，net472）
+  - [x] Release 输出也指向 `1.7/Assemblies/`（Debug/Release 同路径，`dotnet build -c Release` 已验证）
   - [ ] 进游戏确认补丁加载（`Player.log` 无异常）
 - [x] 修复 `About/About.xml`
   - [x] `<autho>` → `<author>`
@@ -37,7 +37,7 @@
 - [x] 提交 Ribleaf 贴图重命名（`Ribleaf.png` → `Ribleaf_Fruit.png`）
 - [x] 核实 `Textures/updream/*.md`：文档不应随 Mod 发布，移到 `docs/` 或删除
 - [x] 版本统一为 `0.1.0`（About.xml、README、Plan、TODOLIST、develop）
-- [ ] 同步 `AssemblyInfo.cs` 到 `0.1.0.0` 并重建 DLL（当前仍为 `1.0.0.0`）
+- [x] 同步 `AssemblyInfo.cs` 到 `0.1.0.0` 并重建 DLL
 - [ ] 引入 Doxygen：`Doxyfile` + 生成 `docs/api/`（生成物不入库）
 
 ## 2. M0 · 分类与材料

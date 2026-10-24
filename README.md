@@ -4,7 +4,7 @@
 
 # 🧙 RimWitch
 
-**Monsters, silver swords and witch's herbs for RimWorld 1.7**
+**Become a witcher. Then survive.**
 
 [![RimWorld](https://img.shields.io/badge/RimWorld-1.7-2b6cb0?logo=steam&logoColor=white)](https://store.steampowered.com/app/294100/RimWorld/)
 [![Version](https://img.shields.io/badge/version-0.1.0-8a63d2)](About/About.xml)
@@ -17,86 +17,43 @@
 
 > 🇨🇳 中文玩家 / Chinese readers: [点此阅读简体中文版 · Read this in Simplified Chinese](README.zh-CN.md).
 
-RimWitch is a small, early-prototype content mod with a witcher flavour: some creatures shrug off ordinary steel and only fear silver, and three humble herbs hide something useful under the dirt.
+RimWitch is a witcher-style expansion for RimWorld.
 
 > [!NOTE]
-> RimWitch is at **0.1.0**. It currently ships **three alchemical herbs** — crow's eye, honeysuckle and ribleaf — plus the **silver-weakness framework**. It does **not** add monsters or alchemy yet — those are the next milestone, see [What's next](#whats-next).
+> RimWitch is in development for RimWorld 1.7 and requires Harmony. This page describes what the mod is aiming for, not a finished feature list.
 
-## Monsters fear only silver
+## The witcher
 
-Any creature tagged as a monster takes only **10%** damage from attacks that are not silver:
+How to become a witcher:
 
-- **Silver** — a weapon made of silver, or one flagged as silver by a mod — deals full damage.
-- **Everything else** deals a tenth: steel, clubs, guns, teeth and claws.
-- **Traps, explosions and environmental damage** are not reduced, because nobody is swinging them.
+1. **Brew a potion and drink it** — grow herbs and make it at an alchemy bench.
+2. **Enter the device and mutate** — step into a special building; the change takes time.
 
-The rule is data-driven: any mod can flag its own creatures and weapons, and they join the system automatically.
+What you get:
 
-> RimWitch itself doesn't include monsters yet. The framework is here so that upcoming creatures — and other mods — can use it.
+1. **Improved attributes**
+2. **Signs**
+3. **Can use potions and decoctions**
+4. **Toxicity**
 
-## The crow's eye
+## Monster invasions
 
-A hardy shrub with dark, cypress-like foliage and a black-chestnut rootstock buried underground. Unremarkable above ground; valuable below.
+- Invasions come in groups, sometimes with several kinds of monster at once.
+- After the fight you can recover monster parts for potions, blade oils and gear.
 
-| Attribute                 | Value                      |
-| :------------------------ | :------------------------- |
-| **Grows in**              | 5 days                     |
-| **Harvest**               | 8 crow eye roots per plant |
-| **Sowing skill**          | 3                          |
-| **Fertility sensitivity** | 0.7                        |
-| **Plantable in**          | Soil, hydroponics          |
-| **Market value**          | 0.3 per root               |
-| **Shelf life**            | 30 days before rotting     |
-| **Edible?**               | Only in desperation        |
+## Witcher contracts
 
-The root keeps a colonist lucid through pain and steady under fear — at the price of a lingering paranoia. It is the first ingredient of something bigger: a planned alchemy line of decoctions, potions and blade oils.
+- Other factions post jobs to hunt monsters.
 
-Crow's eye is one of three herbs in the mod. **Honeysuckle** and **ribleaf** can be sown and harvested too; their growth, yield and value are still being tuned.
+## Expansions
 
-## Installation
+Future updates will keep adding content:
 
-1. Subscribe to **[Harmony](https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077)** — required.
-2. Drop the `RimWitch` folder into:
-
-   ```text
-   …\steamapps\common\RimWorld\Mods\
-   ```
-
-3. Enable `[oks]rimwitch` in **Options → Mods**, with Harmony loaded before it.
-4. **Restart the game.** Harmony patches are applied at startup; reloading defs is not enough.
-
-> [!IMPORTANT]
-> The GitHub source does not contain a compiled DLL. Cloned straight from the repository, only the crow's eye content loads and the silver rule stays inactive. If you are building from source, see [docs/develop.md](docs/develop.md).
-
-## Compatibility
-
-- **RimWorld 1.7** only.
-- **Harmony** is required.
-- Content-only mods are safe to combine.
-- Combat overhauls that also rewrite damage handling may behave differently; please report what you see.
-
-## What's next
-
-The next milestone is a small, complete alchemy loop built on the herbs already in the mod:
-
-- **Alchemy bench** — where materials become decoctions, potions and oils
-- **Monster parts** — troll mutagen, nekker heart, monster liver
-- **Troll decoction** — slow, steady healing
-- **White Raffard's decoction** — instant healing
-- **Beast oil** — extra damage against animals
-
-The design, recipes and acceptance checks live in [docs/Plan.md](docs/Plan.md) (Chinese). This is a work in progress and not part of the current build.
-
-## Credits
-
-- [Harmony](https://github.com/pardeike/Harmony) by Andreas Pardeike — the patching backbone.
-- [RimWorld](https://rimworldgame.com/) by Ludeon Studios.
-- Preview artwork belongs to its original author; it will be replaced if requested.
+- More kinds of monsters, including stronger variants.
+- More gear, potions and recipes.
+- DLC crossover content.
+- Cross-mod collaborations.
 
 ## License
 
 GPL-3.0 — see [LICENSE](LICENSE).
-
-## For modders
-
-Developer docs, build steps and the extension API: [docs/develop.md](docs/develop.md). Planned work: [docs/Plan.md](docs/Plan.md).
